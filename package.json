@@ -1,0 +1,62 @@
+{
+  "name": "claudecode-gemini-adapter",
+  "version": "0.2.0",
+  "description": "Use Claude Code with Gemini models through your own Antigravity CLI login. Claude Code runs the tools; Gemini only proposes them.",
+  "keywords": [
+    "claude-code",
+    "gemini",
+    "antigravity",
+    "adapter",
+    "anthropic-messages",
+    "llm",
+    "cli"
+  ],
+  "license": "MIT",
+  "author": "roanalytics",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roanalytics/claudecode-gemini-adapter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/roanalytics/claudecode-gemini-adapter/issues"
+  },
+  "homepage": "https://github.com/roanalytics/claudecode-gemini-adapter#readme",
+  "type": "module",
+  "bin": {
+    "claude-gemini": "bin/claude-gemini.mjs"
+  },
+  "os": [
+    "darwin"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "bin",
+    "src",
+    "config",
+    "docs",
+    "README.md",
+    "README.es.md",
+    "CHANGELOG.md",
+    "SECURITY.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test --test-concurrency=1 test/bridge.test.mjs test/agy-envelope.test.mjs test/agy-render.test.mjs test/agy-transport.test.mjs test/agy-session-pool.test.mjs test/agy-process.test.mjs test/agy-model-routes.test.mjs test/agy-profile.test.mjs test/agy-limits.test.mjs test/binaries.test.mjs test/primary-ledger.test.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "smoke:sessions": "node scripts/smoke-sessions.mjs",
+    "smoke:errors": "node scripts/smoke-errors.mjs",
+    "smoke:models": "node scripts/smoke-model-routes.mjs",
+    "canary:primary": "node scripts/canary-primary-agy.mjs",
+    "canary:long": "node scripts/canary-primary-agy.mjs --long",
+    "canary:sessions": "node scripts/canary-sessions.mjs",
+    "canary:features": "node scripts/canary-features.mjs",
+    "canary:stress": "node scripts/canary-stress.mjs",
+    "bench:live": "node scripts/bench-live.mjs",
+    "check": "node bin/claude-gemini.mjs --check",
+    "start": "node bin/claude-gemini.mjs",
+    "log": "tail -n 50 -f ~/Library/Logs/claudecode-gemini-adapter/bridge.jsonl",
+    "verify:install": "node scripts/verify-install.mjs"
+  }
+}

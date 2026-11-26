@@ -1,0 +1,19 @@
+[
+  {
+    "label": "claude-mem session memory",
+    "start": "^SessionStart:[A-Za-z]+ hook success: ## Memory from Previous Sessions",
+    "end": "^# Environment$"
+  },
+  {
+    "label": "engram first-action nudge",
+    "paragraph": "CRITICAL FIRST ACTION - Execute this ToolSearch NOW"
+  },
+  {
+    "label": "engram follow-up nudge",
+    "paragraph": "^After loading tools, call mem_context to check for prior session history"
+  },
+  {
+    "label": "memory save reminder",
+    "paragraph": "MEMORY REMINDER: It's been over \\d+ minutes since your last save"
+  }
+]
